@@ -2,15 +2,15 @@
 {% load static %}
 {% block coderhouse_project_content %}
 
-<h2>Eliminar Estudiente</h2>
+<h2>Eliminar seeds</h2>
 <hr></hr>
 
-<p>Estás seguro de eliminar el Estudiente: {{ student.name }}?</p>
+<p>Estás seguro de eliminar {{ seeds.name }}?</p>
 
 <form action="" method="POST">
     {% csrf_token %}
     <input class="btn2 btn-warning" type="submit" value="Si, eliminar.">
-    <a class="btn2 btn-primary" href="{% url 'student:student-list' %}" >Cancelar</a>
+    <a class="btn2 btn-primary" href="{% url 'seeds:seeds-list' %}" >Cancelar</a>
 </form>
 
 {% endblock %}

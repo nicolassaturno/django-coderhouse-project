@@ -10,7 +10,7 @@
     <img height="160px" src="{{url}}" alt="">
 </div>
 {% endif %}
-<h2>Buscador de cursos</h2>
+<h2>Buscador</h2>
 <hr>
 </hr>
 
@@ -29,12 +29,12 @@
 </hr>
 
 
-{% if courses %}
+{% if seeds %}
 <ul>
-    {% for course in courses %}
+    {% for seeds in seeds %}
     <li>
-        Curso: {{course.name}}
-        -- Camada: {{course.code}}
+         {{seeds.name}}
+         {{seeds.price}}
     </li>
     {% endfor %}
 </ul>
