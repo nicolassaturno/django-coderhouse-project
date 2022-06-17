@@ -6,12 +6,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('course', '0001_initial'),
+        ('seeds', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='course',
+            model_name='seeds',
             name='description',
             field=models.TextField(blank=True, null=True),
         ),
