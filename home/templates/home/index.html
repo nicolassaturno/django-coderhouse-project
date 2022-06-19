@@ -26,10 +26,10 @@
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home:main' %}">Home</a>
                 
-                <a class="navbar-brand" href="{% url 'seeds:seeds-list' %}">Cursos</a>
+                <a class="navbar-brand" href="{% url 'seeds:seeds-list' %}">Seeds</a>
                 
                 {% if user.is_authenticated %}
-                <a class="navbar-brand" href="{% url 'homework:homework-list' %}">Contacto</a>
+                <a class="navbar-brand" href="{% url 'home:contacto' %}">Contacto</a>
                 <a class="btn btn-secondary" href="{% url 'user:user-update' %}">Editar usuario</a>
                 <a class="btn btn-primary" href="{% url 'user:user-logout' %}">Cerrar Sesión</a>
                 {% else %}
@@ -42,9 +42,17 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <div class="text-center text-white">
+                        <div class="text-center text-green">
                             <!-- Page heading-->
-                            <h1 class="mb-8">Karazhan<br> Growshop</h1>
+                            <h1 class="mb-8">Karazhan<br> Growshop</h1> 
+                            {% if user.is_authenticated %}
+                            <div class="text-left text-white">
+                            <h5>Bienvenido {{ user.username }}</h5>
+                            <h8><a style="color: rgb(3, 36, 184)" href="{% url 'user:avatar-load' %}">Cambiar Avatar</a></h8> 
+                            <img height="80px" src="{{url}}" alt="">
+                            </div> 
+                            {% endif %} 
+                                                                     
                             {% if messages %}
                                 {% for message in messages %}
                                 <h4><p style="color: rgb(131, 31, 0)" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p></h4>
@@ -60,6 +68,7 @@
                     </div>
                 </div>
             </div>
+          
         </header>
         <!-- Footer-->
         <footer class="footer bg-light">
@@ -76,7 +85,7 @@
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><a href="#!">About</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="{% url 'home:contacto' %}">Contact</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
                             <li class="list-inline-item">⋅</li>

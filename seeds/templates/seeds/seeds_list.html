@@ -3,7 +3,7 @@
 {% block coderhouse_project_content %}
 
 <h2>Seeds</h2>
-{% if user.is_authenticated %}
+{% if user.is_superuser %}
 <a class="card_custom" href="{% url 'seeds:seeds-add' %}">Crear Seeds</a>
 {% endif %}
 <hr></hr>
@@ -15,7 +15,7 @@
             <a href="{% url 'seeds:seeds-detail' seeds.id %}">
                 <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
             </a>
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
         |
         <a href="{% url 'seeds:seeds-update' seeds.id %}">
             <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>

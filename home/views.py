@@ -12,7 +12,6 @@ def index(request):
     context_dict.update({
         'seeds': seeds,
     })
-    print('context_dict: ', context_dict)
     return render(
         request=request,
         context=context_dict,
@@ -43,4 +42,12 @@ def search(request):
         request=request,
         context=context_dict,
         template_name="home/main.html",
+    )
+
+def contacto(request):
+    context_dict = {}
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='home/contacto.html'
     )
