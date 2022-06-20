@@ -1,0 +1,9 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block coderhouse_project_content %}
+
+<img height="60px" src="{{url}}" alt="">
+<a class="btn btn-primary" href="{% url 'user:avatar-load' %}">Cambiar avatar</a>
+<a class="btn btn-primary" href="{% url 'user:user-update' %}">Editar perfil</a>
+
+{% endblock %}

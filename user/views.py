@@ -99,3 +99,12 @@ def avatar_load(request):
         context={"form": form},
         template_name="user/avatar_form.html",
     )
+
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        return render(request, 'user:profile', {})
+
+    
+
