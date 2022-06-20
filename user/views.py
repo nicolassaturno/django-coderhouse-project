@@ -103,8 +103,12 @@ def avatar_load(request):
 
 @login_required
 def profile(request):
-    if request.method == 'POST':
-        return render(request, 'user:profile', {})
+    context_dict = {}
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='user/profile.html'
+    )
 
     
 
