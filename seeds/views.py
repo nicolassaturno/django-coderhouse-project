@@ -33,3 +33,4 @@ class SeedsUpdateView(LoginRequiredMixin, UpdateView):
 class SeedsDeleteView(LoginRequiredMixin, DeleteView):
     model = Seeds
     success_url = reverse_lazy('seeds:seeds-list')
+

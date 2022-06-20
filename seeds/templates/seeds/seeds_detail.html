@@ -4,9 +4,17 @@
 
 <h2>Detalle</h2>
 <hr></hr>
-<p><h3>{{ seeds.name }}</h3></p>
-<p><h4>{{ seeds.price }}</h4></p>
+<p><h3>Nombre: {{ seeds.name }}</h3></p>
+<p><h4>$: {{ seeds.price }}</h4></p>
 <h4>Descripción:</h4>
-<p><textarea readonly rows="14" cols="100" >{{ seeds.description }}</textarea></p>{% load static %}<img src="{% static 'seeds/budha.jpg' %}" alt="My image">
+<p><textarea readonly rows="14" cols="100" >{{ seeds.description }}</textarea></p>
+{% load static %}
+{% if seeds.name == 'Budha Autodiesel' %}
+<img src="{% static 'seeds/Budha Autodiesel.jpg' %}" alt="{{seeds.name}}">
+{% elif seeds.name == 'Amnesia' %}
+<img src="{% static 'seeds/amnesia.jpg' %}" alt="{{seeds.name}}">
+{% elif seeds.name == 'Purple Kush' %}
+<img src="{% static 'seeds/purple.jpg' %}" alt="{{seeds.name}}">
+{% endif %}
 <p><a class="btn2 btn-primary" href="{% url 'seeds:seeds-list' %}">Regresar a la lista de seeds</a></p>
 {% endblock %}
