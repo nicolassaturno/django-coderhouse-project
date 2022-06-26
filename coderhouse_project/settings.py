@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'seeds',
     'home',
     'user',
+    'media',
 ]
 
 MIDDLEWARE = [
