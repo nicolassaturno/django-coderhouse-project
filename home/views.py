@@ -60,3 +60,12 @@ def about(request):
         context=context_dict,
         template_name='home/about.html'
     )
+
+
+def terms(request):
+    context_dict = {}
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='home/terms.html'
+    )
