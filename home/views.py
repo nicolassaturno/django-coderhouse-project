@@ -51,3 +51,12 @@ def contacto(request):
         context=context_dict,
         template_name='home/contacto.html'
     )
+
+
+def about(request):
+    context_dict = {}
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='home/about.html'
+    )
